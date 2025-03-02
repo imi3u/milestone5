@@ -7,75 +7,109 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body class="bg-gray-100 p-5">
     <section class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-5">
         <header class="flex justify-between items-center">
+
+            <div class="flex items-center gap-3">
+                <img src="./assets/logo.png" alt="Logo" class="h-8 w-8">
             <h1 class="text-xl font-bold text-gray-700 flex items-center">
                 <span class="text-blue-600 text-2xl">D</span>ev<span class="font-black">Board</span>
             </h1>
-            <div class="flex items-center gap-4">
+            </div>
+
+            <div class="flex items-center gap-5">
+                <div class="flex gap-1 items-center">
+                    <img src="./assets/checkbox.png" alt="Logo" class="h-5 w-5">
                 <div id="completedCount" class="badge badge-primary p-3">23</div>
+                </div>
+
                 <button id="changeColorBtn" class="btn btn-circle bg-gray-200">
-                    <div class="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-red-500"></div>
+                    <img src="./assets/theme-btn.png" alt="Logo" class="h-8 w-8">
+                    <!-- <div class="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-red-500"></div> -->
                 </button>
             </div>
+
         </header>
         
-        <section class="grid grid-cols-4 gap-4 mt-6">
-            <div class="col-span-3 grid grid-cols-4 gap-4">
-                <div class="bg-gray-200 p-4 rounded-lg text-center col-span-1">
+        <section class="grid grid-cols-4  gap-4 mt-6">
+          <div class="col-span-3 grid grid-cols-4 gap-4">
+           <div class="bg-gray-200 p-4  rounded-lg text-center items-center col-span-1">
+                    <div class="flex items-center gap-5">
+                        <img src="./assets/checkbox.png" alt="Logo" >
                     <h2 class="text-lg font-semibold">Task Assigned</h2>
+                    </div>
+
                     <p id="taskCount" class="text-2xl font-bold">6</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-4 rounded-lg text-center col-span-2">
+
+                <div class="flex items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white p-4 rounded-lg text-center col-span-2 cursor-pointer" onclick="location.href='faq.html'">
+                    <img src="./assets/board.png" alt="Logo" class="">
                     <h2 class="text-lg font-semibold">Discover Something New Today!</h2>
                 </div>
-                <div class="bg-gray-200 p-4 rounded-lg text-center col-span-1">
+
+                <div class="bg-gray-200 p-4 rounded-lg text-center flex items-center gap-5 col-span-1">
+                    <img src="./assets/calender.png" alt="Logo" class="h-8 w-8">
                     <h2 class="text-lg font-semibold" id="currentDate"></h2>
                 </div>
+
             </div>
+
             <section class="bg-white p-4 shadow-md rounded-lg">
-                <h3 class="font-semibold text-gray-700">Activity Log</h3>
-                <button class="btn btn-secondary w-full mt-3">Clear History</button>
+                <div class="flex items-center gap-3">
+                    <img src="./assets/activity.png" alt="Logo" class="h-5 w-5">
+             <h3 class="font-semibold text-gray-700">Activity Log</h3>
+                </div>
+                <div id="activityLog" class="mt-3 text-gray-600 text-sm"></div>
+                <button class="btn btn-secondary w-full mt-3" onclick="clearLog()">Clear History</button>
             </section>
         </section>
         
-        <section class="grid grid-cols-4 gap-4 mt-6">
-            <div class="col-span-3 grid grid-cols-3 gap-4">
-                <div class="bg-white p-4 shadow-md rounded-lg">
-                    <h3 class="font-semibold text-gray-700">Shop Ease</h3>
+        <section class="grid grid-cols-4  gap-4 mt-6">
+         <div class="col-span-3 grid grid-cols-3 gap-4">
+           <div class="bg-white p-4 shadow-md gap-y-2 rounded-lg">
+                    <h3 class="font-semibold gap-y-2 text-gray-700">Shop Ease</h3>
                     <p class="text-lg font-bold">Fix Mobile Button Issue</p>
-                    <p class="text-sm font-bold mt-2">Deadline: 21 March 2025</p>
+                    <article class="gap-y-2">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</article>
+                    <p class="text-sm gap-y-2 font-bold mt-2">Deadline: 21 March 2025</p>
                     <button class="btn btn-primary w-full mt-3 completeTask">Completed</button>
                 </div>
+
                 <div class="bg-white p-4 shadow-md rounded-lg">
-                    <h3 class="font-semibold text-gray-700">Soft Pay</h3>
-                    <p class="text-lg font-bold">Add Pay Success Modal</p>
+                    <h3 class="font-semibold text-gray-700">CloudSync</h3>
+                    <p class="text-lg font-bold">Add Dark Mode</p>
+                    <p>Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
                     <p class="text-sm font-bold mt-2">Deadline: 25 March 2025</p>
                     <button class="btn btn-primary w-full mt-3 completeTask">Completed</button>
                 </div>
+
                 <div class="bg-white p-4 shadow-md rounded-lg">
-                    <h3 class="font-semibold text-gray-700">Meta</h3>
-                    <p class="text-lg font-bold">Add new reaction 🙌</p>
+                    <h3 class="font-semibold text-gray-700">SwiftPay</h3>
+                    <p class="text-lg font-bold">Optimize Home page</p>
+                    <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
                     <p class="text-sm font-bold mt-2">Deadline: 31 March 2025</p>
                     <button class="btn btn-primary w-full mt-3 completeTask">Completed</button>
                 </div>
+
                 <div class="bg-white p-4 shadow-md rounded-lg">
-                    <h3 class="font-semibold text-gray-700">Programming Hero</h3>
-                    <p class="text-lg font-bold">Fix Video Loading Issue</p>
-                    <p class="text-sm font-bold mt-2">Deadline: 21 March 2025</p>
+                    <h3 class="font-semibold text-gray-700">Meta</h3>
+                    <p class="text-lg font-bold">Add new emoji 🤲</p>
+                    <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
                     <button class="btn btn-primary w-full mt-3 completeTask">Completed</button>
                 </div>
+
                 <div class="bg-white p-4 shadow-md rounded-lg">
                     <h3 class="font-semibold text-gray-700">Google LLC</h3>
                     <p class="text-lg font-bold">Integrate AI search</p>
-                    <p class="text-sm font-bold mt-2">Deadline: 1 April 2025</p>
+                    <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
                     <button class="btn btn-primary w-full mt-3 completeTask">Completed</button>
                 </div>
+
                 <div class="bg-white p-4 shadow-md rounded-lg">
-                    <h3 class="font-semibold text-gray-700">Polygon Tech</h3>
-                    <p class="text-lg font-bold">Review Ami Probashi Site</p>
-                    <p class="text-sm font-bold mt-2">Deadline: 5 May 2025</p>
+                    <h3 class="font-semibold text-gray-700">Glassdoar</h3>
+                    <p class="text-lg font-bold">Improve Job searching </p>
+                    <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
                     <button class="btn btn-primary w-full mt-3 completeTask">Completed</button>
                 </div>
             </div>
@@ -97,11 +131,11 @@
             return color;
         }
 
-        document.getElementById("changeColorBtn").addEventListener("click", function() {
+       document.getElementById("changeColorBtn").addEventListener("click", function() {
             document.body.style.backgroundColor = getRandomColor();
         });
 
-        function showPopup(message) {
+      function showPopup(message) {
             const popup = document.getElementById("popup");
             document.getElementById("popupMessage").textContent = message;
             popup.classList.remove("hidden");
@@ -111,6 +145,18 @@
             document.getElementById("popup").classList.add("hidden");
         });
 
+      
+      function getCurrentTime() {
+            let options = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true, 
+                timeZone: 'Asia/Dhaka' 
+            };
+            return new Date().toLocaleTimeString('en-US', options);
+        }
+
         document.querySelectorAll(".completeTask").forEach(button => {
             button.addEventListener("click", function() {
                 let taskCount = document.getElementById("taskCount");
@@ -118,23 +164,33 @@
                 let currentTaskCount = parseInt(taskCount.textContent);
                 let currentCompletedCount = parseInt(completedCount.textContent);
                 
-                if (currentTaskCount > 0) {
+          if (currentTaskCount > 0) {
                     taskCount.textContent = currentTaskCount - 1;
                     completedCount.textContent = currentCompletedCount + 1;
                 }
                 
                 this.disabled = true;
                 this.classList.add("btn-disabled");
-                
+
+                let taskTitle = this.parentElement.querySelector("h3").textContent;
+                let currentTime = getCurrentTime();
+                let activityLog = document.getElementById("activityLog");
+
+                let logMessage = document.createElement("p");
+                logMessage.textContent = `You have completed the task '${taskTitle}' at ${currentTime}`;
+                logMessage.classList.add("text-gray-600", "text-sm", "mt-2");
+
+                activityLog.appendChild(logMessage);
+
                 showPopup("Board updated successfully");
 
-                if (taskCount.textContent === "0") {
+        if (taskCount.textContent === "0") {
                     setTimeout(() => showPopup("Congrats! All tasks completed"), 1000);
                 }
             });
         });
 
-        function updateDate() {
+  function updateDate() {
             let options = { 
                 weekday: 'short', 
                 year: 'numeric', 
@@ -149,7 +205,11 @@
             document.getElementById("currentDate").textContent = now;
         }
 
-        updateDate(); // Initial call
+      function clearLog() {
+            document.getElementById("activityLog").innerHTML = "";
+        }
+
+        updateDate(); 
         setInterval(updateDate, 1000); 
     </script>
 
